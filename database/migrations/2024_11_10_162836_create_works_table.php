@@ -11,19 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('works', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->string('project_url')->nullable();
-            $table->binary('featured_image');
-            $table->binary('large_image');
-            $table->binary('medium_image');
-            $table->binary('small_image');
-            $table->date('completion_date')->nullable();
-            $table->string('tags');
-            $table->timestamps();
-        });
+        Schema::dropIfExists('works');
+        // Schema::create('works', function (Blueprint $table) {
+        //     $table->id();
+
+        //     $table->timestamps();
+        // });
     }
 
     /**
