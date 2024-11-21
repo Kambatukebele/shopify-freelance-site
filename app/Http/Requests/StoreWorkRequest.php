@@ -11,7 +11,7 @@ class StoreWorkRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class StoreWorkRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            // 'title' => "required|string",
+            // 'description' => "required",
+            // "project_url" => "required|url:https",
+            // "featured_image" => "required",
+            // "large_image" => "required",
+            // "medium_image" => "required",
+            // "small_image" => "required",
+            // "completion_date" => "required|date",
+            // "tags" => "required|string"
         ];
     }
 }

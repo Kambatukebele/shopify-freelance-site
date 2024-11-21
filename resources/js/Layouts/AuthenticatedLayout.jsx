@@ -109,9 +109,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                                     All Works
                                                 </Dropdown.Link>
                                                 <Dropdown.Link
-                                                    href={route("logout")}
-                                                    method="post"
-                                                    as="button"
+                                                    href={route("work.create")}
                                                 >
                                                     Create Work
                                                 </Dropdown.Link>

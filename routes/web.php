@@ -24,6 +24,8 @@ Route::get('/dashboard', function () {
 
 //Youtube
 Route::resource('dashboard/youtube', YoutubeController::class)->middleware(['auth', 'verified']);
+Route::get('/youtube/read', [YoutubeController::class, 'read']);
+
 //work
 Route::resource('dashboard/work', WorkController::class)->middleware(['auth', 'verified']);
 

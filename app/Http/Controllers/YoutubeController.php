@@ -9,12 +9,22 @@ use App\Models\Youtube;
 class YoutubeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource in the dashboard if admin is logged in.
      */
     public function index()
     {
         $youtubes = Youtube::orderBy('created_at', 'desc')->paginate(10);
         return inertia('Youtube/Index', ['youtubes' => $youtubes]);
+    }
+
+    /**
+     * Display a listing of the resource in home page.
+     * This is just the read method. user can view but can't update
+     */
+    public function read()
+    {
+        $youtubes = Youtube::orderBy('created_at', 'desc')->paginate(10);
+        return inertia('Youtube/Read', ['youtubes' => $youtubes]);
     }
 
     /**

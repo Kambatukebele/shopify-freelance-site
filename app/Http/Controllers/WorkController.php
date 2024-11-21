@@ -13,7 +13,7 @@ class WorkController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('Work/Index');
     }
 
     /**
@@ -21,7 +21,7 @@ class WorkController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Work/Create');
     }
 
     /**
@@ -29,7 +29,29 @@ class WorkController extends Controller
      */
     public function store(StoreWorkRequest $request)
     {
-        //
+        // Handle and store images
+        return dd($request->file('large_image'));
+        $featuredImagePath = $request->file('featured_image')->store('assets/images/featured', 'public');
+        $largeImagePath = $request->file('large_image')->store('assets/images/large', 'public');
+        $mediumImagePath = $request->file('medium_image')->store('assets/images/medium', 'public');
+        $smallImagePath = $request->file('small_image')->store('assets/images/small', 'public');
+
+        // Save the validated data along with image paths to the database
+        $data = [
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'project_url' => $request->input('project_url'),
+            'featured_image' => $featuredImagePath,
+            'large_image' => $largeImagePath,
+            'medium_image' => $mediumImagePath,
+            'small_image' => $smallImagePath,
+            'completion_date' => $request->input('completion_date'),
+            'tags' => $request->input('tags'),
+        ];
+
+        // Example: Save to a 'projects' table (adjust as needed)
+        Work::create($data);
+        return redirect()->route("work.index");
     }
 
     /**
