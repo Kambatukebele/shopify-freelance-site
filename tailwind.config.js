@@ -44,12 +44,16 @@ export default {
                     "0%, 100%": { transform: "translateY(0)" },
                     "50%": { transform: "translateY(-5px)" },
                 },
+                scroll: {
+                    "0%": { transform: "translateX(100%)" },
+                    "100%": { transform: "translateX(-50%)" },
+                },
                 rotate: {
                     "0%": { transform: "rotate(0deg)" },
                     "100%": { transform: "rotate(360deg)" },
                 },
                 slide: {
-                    "0%": { transform: "translateX(100%)" },
+                    "0%": { transform: "translateX(50%)" },
                     "100%": { transform: "translateX(-100%)" },
                 },
             },
@@ -57,6 +61,7 @@ export default {
                 upAndDown: "upAndDown 3s infinite",
                 slowRotate: "rotate 100s linear infinite",
                 slide: "slide 10s linear infinite",
+                scroll: "scroll 10s linear infinite",
             },
         },
     },

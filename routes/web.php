@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PorfolioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\YoutubeController;
@@ -27,7 +28,8 @@ Route::resource('dashboard/youtube', YoutubeController::class)->middleware(['aut
 Route::get('/youtube/read', [YoutubeController::class, 'read']);
 
 //work
-Route::resource('dashboard/work', WorkController::class)->middleware(['auth', 'verified']);
+// Route::resource('dashboard/work', WorkController::class)->middleware(['auth', 'verified']);
+Route::resource('dashboard/portfolio', PorfolioController::class)->middleware(['auth', 'verified']);
 
 
 Route::middleware('auth')->group(function () {

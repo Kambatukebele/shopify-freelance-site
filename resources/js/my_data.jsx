@@ -343,22 +343,24 @@ export const businessType = [
 export const works = [
     {
         id: 1,
-        title: "Webizycode agency",
-        description:
-            "Digital Marketing Agency build with the Laravel in the backend and tailwindcss and blade in the frontend",
+        company_name: "Webizycode agency",
+        niche: "Digitigal agency website",
         img: webizyCode,
         link: "https://webizycode.com/",
-        tech: ["Laravel, Blade, Tailwindcss, Javascript, MySQL, HTML"],
-        stack: "Fullstack",
+        reviews:
+            "lorem loremloremloremloremloremloremloremloremloremloremlorem",
+        name_of_representative: "kamba",
+        title: "CEO",
     },
     {
         id: 2,
-        title: "Benzagroupe",
-        description:
-            "Consultancy website build with Reactjs in the frontend and WordPress API in the backend",
+        company_name: "Webizycode agency",
+        niche: "Digitigal agency website",
         img: benzagroupe,
         link: "https://benzagroupe.com/",
-        tech: ["Reactjs, Tailwindcss, HTML"],
-        stack: "Frontend",
+        reviews:
+            "lorem loremloremloremloremloremloremloremloremloremloremlorem",
+        name_of_representative: "Tukebele",
+        title: "CEO",
     },
 ];
