@@ -6,7 +6,7 @@ use App\Models\Porfolio;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class PorfolioPolicy
+class PortfolioPolicy
 {
     /**
      * Determine whether the user can view any models.

@@ -108,14 +108,14 @@ export default function AuthenticatedLayout({ header, children }) {
                                                         "portfolio.index"
                                                     )}
                                                 >
-                                                    All Works
+                                                    All Portfolios
                                                 </Dropdown.Link>
                                                 <Dropdown.Link
                                                     href={route(
                                                         "portfolio.create"
                                                     )}
                                                 >
-                                                    Create Work
+                                                    Create Portfolio
                                                 </Dropdown.Link>
                                             </Dropdown.Content>
                                         </Dropdown>

@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\PorfolioController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\WorkController;
-use App\Http\Controllers\YoutubeController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\WorkController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\YoutubeController;
+use App\Http\Controllers\PortfolioController;
 
 Route::get('/', function () {
     return Inertia::render('Home', [
@@ -29,7 +29,7 @@ Route::get('/youtube/read', [YoutubeController::class, 'read']);
 
 //work
 // Route::resource('dashboard/work', WorkController::class)->middleware(['auth', 'verified']);
-Route::resource('dashboard/portfolio', PorfolioController::class)->middleware(['auth', 'verified']);
+Route::resource('dashboard/portfolio', PortfolioController::class)->middleware(['auth', 'verified']);
 
 
 Route::middleware('auth')->group(function () {
